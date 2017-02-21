@@ -56,9 +56,9 @@ public class TestServiceImpl implements TestService {
 				patchData.put("data", new JsonObject().put("test", "123"));
 
 				System.out.print("Connecting to: " + "http://" + this.config.getString("host") + ":"
-						+ this.config.getInteger("port").toString() + "/api/v2/users/123");
+						+ this.config.getInteger("port").toString() + "/api/v2/users/123|123");
 
-				HttpClientRequest request = httpClient.request(HttpMethod.PATCH, "/api/v2/users/123", response -> {
+				HttpClientRequest request = httpClient.request(HttpMethod.PATCH, "/api/v2/users/123|123", response -> {
 					Buffer totalBuffer = Buffer.buffer();
 
 					int statusCode = response.statusCode();
